@@ -1,0 +1,194 @@
+body{
+    background: #EFEFEF;
+    color: black;
+    margin: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+hr{
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
+}
+
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.topNavbar{
+    padding: 20px 0 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.inner{
+    padding: 0 16px 0 16px;
+}
+
+.topNavbar a{
+    float: left
+}
+
+.topNavbar nav{
+    float: right;
+    padding-bottom: 0px;
+    padding-top: 8px;
+}
+
+.topNavbar nav>ul{
+    list-style: none;margin: 0;padding: 0;
+}
+
+.topNavbar nav>ul>li{
+    float: left;
+    margin-left: 17px;
+    margin-right: 17px;
+}
+
+.topNavbar nav>ul>li>a{
+    font-size: 12px;
+    color: #b7b7b7;
+    text-decoration: none;
+    font-weight: bold;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+
+}
+
+.topNavbar nav>ul>li>a:hover{
+    border-bottom: 3px solid greenyellow;
+}
+
+.topNavbar .logo{
+    font-size: 24px;
+    font-family: "Arial Black";
+    padding-bottom: 3.4px;
+    padding-top: 3px;
+}
+
+.topNavbar .logo .rs{
+    margin-right: 4px;
+    color: #E6686A;
+}
+
+.topNavbar .logo .card{
+    color: #9A9DA2;
+}
+
+.banner{
+    height: 515px;
+    background-image: url(./img/bg1.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.banner .mask{
+    height: 515px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.usercard{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+}
+
+.usercard .welcome{
+    background: #E6686A;
+    color: white;
+    display: inline-block;
+    padding: 4px 16px;
+    line-height: 22px;
+    position: relative;
+    margin-bottom: 10px;
+    font-family: "Castellar";
+}
+
+.usercard .welcome .tri{
+    display: block;
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: #E6686A;
+    border-top-width: 0px;
+    position: absolute; /*绝对定位*/
+    left: 4px;
+    top: 100%
+}
+
+.usercard .picture{
+    float: left;
+}
+.usercard .text{
+    float: left;
+    margin-left: 65px;
+    width:470px;
+}
+.usercard .text h1{
+    margin-top: 18px;
+    font-family: "华文新魏";
+}
+.usercard .text p{
+    margin-top: 10px;
+    font-family: "幼圆";
+}
+
+.usercard .text hr{
+    margin: 20px 0;
+}
+
+.usercard .pictureAndText{
+    padding: 50px;
+}
+
+.usercard dl dt,
+.usercard dl dd{
+    float: left;
+    padding: 10px 0;
+    font-family: "幼圆";
+}
+.usercard dl dt{
+    width: 30%;
+    font-weight: bold;
+}
+.usercard dl dd{
+    width: 70%;
+    color: #5c5e63ee;
+}
+
+.usercard>footer.media{
+    background: #E6686A;
+    text-align: center;
+}
+
+.usercard>footer>a>img{
+    width: 60px;
+    height: 60px;
+    vertical-align: top;
+}
+.usercard>footer>a{    
+    margin: 3px 30px;
+    display: inline-block;
+    width: 70px;
+    line-height: 60px;
+    padding: 2.5px;
+    border-radius: 50%;
+}
+.usercard>footer> a:hover{
+    background: rgb(202, 75, 78);    
+}
