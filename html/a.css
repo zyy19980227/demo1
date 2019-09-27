@@ -1,5 +1,5 @@
 body{
-    background: #EFEFEF;
+    background: rgba(163, 161, 161, 0.315);
     color: black;
     margin: 0;
 }
@@ -17,6 +17,13 @@ hr{
     height: 0;
     border: none;
     border-top: 1px solid #DEDEDE;
+}
+ul,ol{
+    list-style: none;
+}
+
+h3,h4,h5,h6,{
+    font-weight: bold;
 }
 
 .clearfix::after{
@@ -58,7 +65,7 @@ hr{
 }
 
 .topNavbar nav>ul>li>a{
-    font-size: 12px;
+    font-size: 17px;
     color: #b7b7b7;
     text-decoration: none;
     font-weight: bold;
@@ -67,11 +74,13 @@ hr{
     padding-top: 5px;
     padding-bottom: 5px;
     display: block;
+    transition: border-bottom 1s;
 
 }
 
 .topNavbar nav>ul>li>a:hover{
     border-bottom: 3px solid greenyellow;
+    border-radius: 1px;
 }
 
 .topNavbar .logo{
@@ -83,7 +92,7 @@ hr{
 
 .topNavbar .logo .rs{
     margin-right: 4px;
-    color: #E6686A;
+    color: rgb(7,203,121);
 }
 
 .topNavbar .logo .card{
@@ -107,10 +116,11 @@ hr{
     margin-left: auto;
     margin-right: auto;
     background-color: #FFFFFF;
+    box-shadow: 5px 6px 12px 4px rgba(0,0,0,0.59);
 }
 
 .usercard .welcome{
-    background: #E6686A;
+    background: rgb(7,203,121);
     color: white;
     display: inline-block;
     padding: 4px 16px;
@@ -124,7 +134,7 @@ hr{
     display: block;
     border: 10px solid transparent;
     width: 0px;
-    border-left-color: #E6686A;
+    border-left-color: rgb(7,203,121);
     border-top-width: 0px;
     position: absolute; /*绝对定位*/
     left: 4px;
@@ -172,7 +182,7 @@ hr{
 }
 
 .usercard>footer.media{
-    background: #E6686A;
+    background: rgb(7,203,121);
     text-align: center;
 }
 
@@ -188,7 +198,178 @@ hr{
     line-height: 60px;
     padding: 2.5px;
     border-radius: 50%;
+    transition: background 0.5s;
 }
 .usercard>footer> a:hover{
-    background: rgb(202, 75, 78);    
+    background: rgba(11, 116, 72, 0.452);    
 }
+
+body>main{
+    margin-top: -340px;
+}
+
+body>main .download{
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    border: 1.5px solid #CDCFD1;
+    background: #EFEFEF;
+    border-radius: 10px;
+    color: #3d4451;
+    font-weight: bold;
+    transition: box-shadow 0.5s;
+    
+}
+body>main .wrapper{
+    text-align:center;
+    margin: 36px 0;
+}
+
+
+body>main .download:hover{
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.3);
+}
+
+.introduction{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    font-family: "楷体";
+    font-size: 20px;
+}
+
+section.skills{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+section.portfolio{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+section.skills>h2{
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+section.portfolio>h2{
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    padding: 30px;
+}
+
+section.skills h3{
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+
+section.skills>ol{
+    background: white;
+    box-shadow: 5px 6px 12px 4px rgba(0,0,0,0.59);
+    padding: 42px 50px 10px;
+}
+section.skills>ol>li{
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+section.skills>ol>li:nth-child(even){
+    float: right;    /*偶数项右浮*/
+}
+
+section.skills .progressbar{
+    height: 6px;
+    background: rgb(205,245,228);
+    border-radius: 5px;
+    margin: 4px 0 40px 0;
+}
+
+section.skills .progressbar .progress{
+    background: rgb(7,203,121);
+    height: 6px;
+    margin-top: -0.5px;
+    border-radius: 5px;
+}
+
+section.portfolio{
+    text-align: center;   /*居中*/
+    margin-bottom: 40px;
+}
+
+section.portfolio>nav{
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+section.portfolio>nav>ol{
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;  /*去除inline-block在下方产生的空隙*/
+}
+
+
+section.portfolio>nav>ol>li{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+section.portfolio>nav>ol>li:nth-child(1){
+    margin-left: 0;       /*使第一个li没有左边距（可替换为 first-child）*/
+}
+
+section.portfolio>nav> .bar{
+    height: 5px;
+    background: rgba(255,255,255);
+    margin-top: 13px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+section.portfolio>nav> .bar .barinner{
+    height: 100%;
+    background: rgb(7,203,121);
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+section.portfolio>nav> .bar.state-1 .barinner{
+    margin-left: 0;
+    width: 35px;
+}
+
+section.portfolio>nav> .bar.state-2 .barinner{
+    margin-left: 65px;
+    width: 50px;
+}
+
+section.portfolio>nav> .bar.state-3 .barinner{
+    margin-left: 140px;
+    width: 96px;
+}
+
+section.portfolio .works{
+    position: relative;
+}
+
+section.portfolio .works > .big,
+section.portfolio .works > .small{
+    position: absolute;
+}
+
