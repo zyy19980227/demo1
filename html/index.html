@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>my web</title>
-        <link rel="stylesheet" href="./a.css">
+        <title>my web</title> 
+        <link rel="stylesheet" href="./css/loading.css">
+        <link rel="stylesheet" href="./css/swiper.min.css">
+        <link rel="stylesheet" href="./css/style.css"> 
     </head>
     <body>
-        <div class="topNavbar">
+        <div id="sw" class="site-welcome active">
+            <div class="loading"></div>
+        </div>
+        <div id="topNavbar" class="topNavbar">
             <div class="inner clearfix">
                     <a class="logo" href="#" alt="logo">
                         <span class="rs">MY</span>
                         <span class="card">Resume</span>
                     </a>
-                    <nav>
+                    <nav class="menu" style="float: right;">
                         <ul class="clearfix">
-                            <li><a href="#">关于</a></li>
-                            <li><a href="#">技能</a></li>
-                            <li><a href="#">作品</a></li>
-                            <li><a href="#">博客</a></li>
+                            <li><a href="#siteAbout">关于</a></li>
+                            <li><a href="#siteSkills">技能</a></li>
+                            <li>
+                                <a  href="#siteWorks">作品</a>
+                                <ul class="submenu">
+                                    <li>作品1</li>
+                                    <li>作品2</li>
+                                    <li>作品3</li>
+                                </ul>
+                            </li>
+                            <li><a href="#siteMessage">留言</a></li>
                             <li><a href="#">日历</a></li>
                             <li><a href="#">联系方式</a></li>
                             <li><a href="#">其他</a> </li>
@@ -28,7 +40,7 @@
             <div class="mask"></div>
         </div>
         <main>
-            <div class="usercard">
+            <div data-x id="siteAbout" class="usercard">
                 <div class="pictureAndText clearfix">
                     <div class="picture">
                         <img src="./img/person.jpg" width="299px" height="347px" alt="头像">       
@@ -37,25 +49,25 @@
                         <span class="welcome">Hello
                             <span class="tri"></span>
                         </span>
-                        <h1>钟远洋</h1>
+                        <h1>Jackson Zhong</h1>
                         <p>前端开发工程师</p>
                         <hr>
                             <dl>
                             <dt>年龄:</dt>
-                            <dd>21</dd>
+                            <dd>66</dd>
                             <dt>所在城市:</dt>
                             <dd>南京</dd>
                             <dt>邮箱:</dt>
-                            <dd>1090359802@qq.com</dd>
+                            <dd>66666666@qq.com</dd>
                             <dt>手机:</dt>
-                            <dd>17314976172</dd>
+                            <dd>18888888888</dd>
                             <dt>毕业时间:</dt>
-                            <dd>2020年6月</dd>
+                            <dd>2080年6月</dd>
                         </dl>
                     </div>
                 </div>
                 <footer class="media">
-                    <a href="https://github.com/zyy19980227" target="_blank">
+                    <a href="#" target="_blank">
                         <img src="./img/github.png" alt="github">
                     </a>
                     <a href="#">
@@ -71,98 +83,91 @@
                 <a class="download" href="./jianli.pdf" target="_blank" download>下载PDF简历</a> 
             </p>
             <p class="introduction">
-                钟远洋，南京信息工程大学，电子与信息工程学院，<br>
-                通信工程2016级学生，2020届毕业生。<br>
-                技能：前端开发，python爬虫，数据库基础操作
+                Jackson Zhong，南京信息工程大学，电子与信息工程学院，<br>
+                通信工程2080级学生，2084届毕业生。<br>
+                技能：html&&css,php,mysql数据库,vue.js
             </p>    
         </main>
-        <section class="skills">
+        <section data-x id="siteSkills" class="skills">
             <h2>专业技能</h2>
             <ol class="clearfix">
                 <li>
-                    <h3>
-                        HTML 5&amp;CSS 3 
-                    </h3>
+                    <h3>HTML 5&amp;CSS 3 </h3>
                     <div class="progressbar">
                         <div class="progress" style="width: 25%;"></div>
                     </div>
                 </li>
                 <li>
-                    <h3>
-                        JavaScript 
-                    </h3>
+                    <h3>JavaScript </h3>
                     <div class="progressbar">
                         <div class="progress" style="width: 35%;"></div>
                     </div>
                 </li>
                 <li>
-                    <h3>
-                        jQuery 
-                    </h3>
+                    <h3>PHP </h3>
                     <div class="progressbar">
                         <div class="progress" style="width: 40%;"></div>
                     </div>
                 </li>
                 <li>
-                    <h3>
-                        Vue.js&amp;React.js&amp;Node.js 
-                    </h3>
+                    <h3>Vue.js </h3>
                     <div class="progressbar">
                         <div class="progress" style="width: 50%;"></div>
                     </div>
                 </li>
                 <li>
-                    <h3>
-                        python 
-                    </h3>
+                    <h3>python </h3>
                     <div class="progressbar">
                         <div class="progress" style="width: 30%;"></div>
                     </div>
                 </li>
                 <li>
-                    <h3>
-                        Mysql 
-                    </h3>
+                    <h3>Mysql </h3>
                     <div class="progressbar">
                         <div class="progress" style="width: 30%;"></div>
                     </div>
                 </li>
             </ol>
         </section>
-        <section class="portfolio">
+        <section data-x id="siteWorks" class="portfolio">
             <h2>作品集</h2>
-            <nav>
-                <ol class="clearfix">
-                    <li id="portfolio1">所有</li>
-                    <li id="portfolio2">框架</li>
-                    <li id="portfolio3">原生JS&amp;CSS</li>
-                </ol>
-                <div id="portfoliobar" class="bar state-1">
-                    <div class="barinner"></div>
+            <div id="mySlides">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <img class="swiper-slide" src="./works/pic1.jpg"></img>
+                        <img class="swiper-slide" src="./works/pic2.jpg"></img>
+                        <img class="swiper-slide" src="./works/pic3.jpg"></img>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-            </nav>
-            <script>
-                portfolio1.onclick= function(){
-                    portfoliobar.className = 'bar state-1'
-                }
-                portfolio2.onclick= function(){
-                    portfoliobar.className = 'bar state-2'
-                }
-                portfolio3.onclick= function(){
-                    portfoliobar.className = 'bar state-3'
-                }
-            </script>
-            <div class="works" style="height: 597px">
-                <div class="big" style="top: 0; left: 0;">
-                    <img src="./img/pic1.jpg" alt="作品1">
-                </div>
-                <div class="small" style="top: 0; left: 645px;">
-                    <img src="./img/pic2.jpg" alt="作品2">
-                </div>
-                <div class="small" style="top: 312px; left: 645px;">
-                    <img src="./img/pic3.jpg" alt="作品3">
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </section>
-    </body>
+        <section data-x id="siteMessage" class="message">
+            <h2>留言</h2>
+            <ol id="messageList"></ol>
+            <form id="postMessageForm">
+                <label for="">姓名</label>
+                <input type="text" name="name">
+                <label for="">内容</label>
+                <input type="text" name="content">
+                <input type="submit" value="提交">
+            </form>
+        </section>
+        <script src="./js/jquery.js"></script>    
+        <script src="./js/TWEEN.js">//引入TWEEN库</script>
+        <script src="./js/swiper.min.js"> </script>
+        <script src="./js/yinghua.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.15.0/dist/av-min.js"></script>
+        <script src="./js/mian.js"></script>
+        <script src="./js/messsage.js"></script>
+        <script type="text/javascript">
+            var a_idx = 0; jQuery(document).ready(function ($) {
+                $("body").click(function (e) {
+                    var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善"); var $i = $("<span/>").text(a[a_idx]);
+                    a_idx = (a_idx + 1) % a.length; var x = e.pageX, y = e.pageY; $i.css({ "z-index": 100000000, "top": y - 20, "left": x, "position": "absolute", "font-weight": "bold", "color": "#ff6651" }); $("body").append($i); $i.animate({ "top": y - 180, "opacity": 0 }, 1500, function () { $i.remove(); });
+                });
+            });
+        </script>
 </html>

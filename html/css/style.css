@@ -2,8 +2,8 @@ body{
     background: rgba(163, 161, 161, 0.315);
     color: black;
     margin: 0;
+    padding-bottom: 500px;
 }
-
 a{
     color: inherit;
     text-decoration: none;
@@ -12,7 +12,6 @@ a{
     margin: 0;
     padding: 0;
 }
-
 hr{
     height: 0;
     border: none;
@@ -21,9 +20,15 @@ hr{
 ul,ol{
     list-style: none;
 }
-
-h3,h4,h5,h6,{
+h3,h4,h5,h6{
     font-weight: bold;
+}
+[data-x].offset{
+    transform: translateY(200px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 1s;
 }
 
 .clearfix::after{
@@ -38,35 +43,39 @@ h3,h4,h5,h6,{
     top: 0;
     left: 0;
     width: 100%;
+    transition: all 0.5s;
+    color: #b7b7b7;
 }
-
+.topNavbar.sticky{
+    background: rgba(255,255,255,0.8);
+    padding: 10px 0;
+    z-index: 1;
+    box-shadow:  0px 3px 10px 0px rgba(0,0,0,0.75);
+    color:#3d4451
+}
 .inner{
     padding: 0 16px 0 16px;
 }
-
 .topNavbar a{
     float: left
 }
-
 .topNavbar nav{
     float: right;
     padding-bottom: 0px;
-    padding-top: 8px;
+    padding-top: 5px;
 }
-
 .topNavbar nav>ul{
     list-style: none;margin: 0;padding: 0;
 }
-
 .topNavbar nav>ul>li{
     float: left;
     margin-left: 17px;
     margin-right: 17px;
+    position: relative;
 }
-
 .topNavbar nav>ul>li>a{
     font-size: 17px;
-    color: #b7b7b7;
+    color: inherit;
     text-decoration: none;
     font-weight: bold;
     border-top: 3px solid transparent;
@@ -75,12 +84,54 @@ h3,h4,h5,h6,{
     padding-bottom: 5px;
     display: block;
     transition: border-bottom 1s;
-
+    position: relative;
 }
-
-.topNavbar nav>ul>li>a:hover{
-    border-bottom: 3px solid greenyellow;
-    border-radius: 1px;
+.topNavbar nav>ul>li.active >a::after,
+.topNavbar nav>ul>li.highlight >a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(7,203,121);
+    height: 3.5px;
+    animation:  menuslide 0.3s;
+    border-radius: 3px;
+}
+@keyframes menuslide{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+@keyframes subslide{
+    0%{
+        margin-right:100%;
+    }
+    100%{
+        margin-right:0%;
+    }
+}
+.topNavbar .submenu{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    color: #3d4451;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    cursor: pointer;   /*改变鼠标样式*/
+}
+.topNavbar li.active .submenu{
+    display: block;
+    animation: subslide .3s;
+}
+.topNavbar .submenu>li{
+    white-space: nowrap;
+    padding: 5px 10px;
 }
 
 .topNavbar .logo{
@@ -89,36 +140,37 @@ h3,h4,h5,h6,{
     padding-bottom: 3.4px;
     padding-top: 3px;
 }
-
 .topNavbar .logo .rs{
     margin-right: 4px;
     color: rgb(7,203,121);
 }
-
 .topNavbar .logo .card{
     color: #9A9DA2;
 }
 
+
 .banner{
     height: 515px;
-    background-image: url(./img/bg1.jpg);
+    background-image: url(/img/bg1.jpg);
     background-position: center center;
     background-size: cover;
 }
-
 .banner .mask{
     height: 515px;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+
+
+
 .usercard{
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 5px 6px 12px 4px rgba(0,0,0,0.59);
+    border-radius: 15px;
 }
-
 .usercard .welcome{
     background: rgb(7,203,121);
     color: white;
@@ -129,7 +181,6 @@ h3,h4,h5,h6,{
     margin-bottom: 10px;
     font-family: "Castellar";
 }
-
 .usercard .welcome .tri{
     display: block;
     border: 10px solid transparent;
@@ -140,7 +191,6 @@ h3,h4,h5,h6,{
     left: 4px;
     top: 100%
 }
-
 .usercard .picture{
     float: left;
 }
@@ -157,15 +207,12 @@ h3,h4,h5,h6,{
     margin-top: 10px;
     font-family: "幼圆";
 }
-
 .usercard .text hr{
     margin: 20px 0;
 }
-
 .usercard .pictureAndText{
     padding: 50px;
 }
-
 .usercard dl dt,
 .usercard dl dd{
     float: left;
@@ -180,12 +227,11 @@ h3,h4,h5,h6,{
     width: 70%;
     color: #5c5e63ee;
 }
-
 .usercard>footer.media{
     background: rgb(7,203,121);
     text-align: center;
+    border-radius: 0 0 15px 15px;
 }
-
 .usercard>footer>a>img{
     width: 60px;
     height: 60px;
@@ -204,10 +250,12 @@ h3,h4,h5,h6,{
     background: rgba(11, 116, 72, 0.452);    
 }
 
+
+
+
 body>main{
     margin-top: -340px;
 }
-
 body>main .download{
     font-size: 14px;
     line-height: 16px;
@@ -217,18 +265,17 @@ body>main .download{
     border-radius: 10px;
     color: #3d4451;
     font-weight: bold;
-    transition: box-shadow 0.5s;
-    
+    transition: box-shadow 0.5s;  
 }
 body>main .wrapper{
     text-align:center;
     margin: 36px 0;
 }
-
-
 body>main .download:hover{
     box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.3);
 }
+
+
 
 .introduction{
     max-width: 940px;
@@ -239,137 +286,126 @@ body>main .download:hover{
     font-size: 20px;
 }
 
+
+
 section.skills{
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
 }
-
 section.portfolio{
-    max-width: 940px;
+    text-align: center;   /*居中*/
+    max-width: 760px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
-
-section.skills>h2{
+section.skills>h2,section.message>h2{
     text-align: center;
     color: #3d4451;
     font-size: 34px;
     line-height: 1.2;
     font-weight: 600;
     padding-bottom: 30px;
+    margin-bottom: 32px;
 }
-
 section.portfolio>h2{
     text-align: center;
     color: #3d4451;
     font-size: 34px;
     line-height: 1.2;
     font-weight: 600;
-    padding: 30px;
+    padding: 5px 0 30px 0;
 }
-
 section.skills h3{
     font-size: 14px;
     line-height: 1.1;
     padding-right: 40px;
 }
-
 section.skills>ol{
     background: white;
     box-shadow: 5px 6px 12px 4px rgba(0,0,0,0.59);
-    padding: 42px 50px 10px;
+    padding: 42px 50px 40px;
+    margin-bottom: 50px;
 }
 section.skills>ol>li{
     float: left;
     width: 48%;
     box-sizing: border-box;
 }
-
 section.skills>ol>li:nth-child(even){
     float: right;    /*偶数项右浮*/
 }
-
 section.skills .progressbar{
     height: 6px;
     background: rgb(205,245,228);
     border-radius: 5px;
     margin: 4px 0 40px 0;
+    overflow: hidden;
 }
-
 section.skills .progressbar .progress{
     background: rgb(7,203,121);
-    height: 6px;
+    height: 100%;
     margin-top: -0.5px;
     border-radius: 5px;
+    transform: translateX(0);
+    transition: all 3s;
 }
-
-section.portfolio{
-    text-align: center;   /*居中*/
-    margin-bottom: 40px;
+section.skills.offset .progress{
+    transform: translateX(-100%)
 }
-
 section.portfolio>nav{
     text-align: center;
     display: inline-block;
     vertical-align: top;
 }
-
 section.portfolio>nav>ol{
     margin: 0 auto;
     display: inline-block;
     vertical-align: top;  /*去除inline-block在下方产生的空隙*/
 }
-
-
 section.portfolio>nav>ol>li{
     float: left;
     margin-left: 40px;
     cursor: pointer;
 }
-
 section.portfolio>nav>ol>li:nth-child(1){
     margin-left: 0;       /*使第一个li没有左边距（可替换为 first-child）*/
 }
+.swiper-container {
+    width: 600px;
+   height: 400px;
+   }
+   .swiper-slide{
+       background: white;
+   }
 
-section.portfolio>nav> .bar{
-    height: 5px;
-    background: rgba(255,255,255);
-    margin-top: 13px;
-    margin-bottom: 30px;
-    border-radius: 5px;
+.swiper-button-next,.swiper-button-prev{
+    background: white;
+    width:64px;
+    height: 64px;
+    border-radius: 50%;
+    top: 47%;
+    outline: none;
 }
 
-section.portfolio>nav> .bar .barinner{
-    height: 100%;
-    background: rgb(7,203,121);
-    border-radius: 5px;
-    transition: all 0.5s;
+#postMessageForm{
+    width: 700px;
+    margin: 50px auto;
+}
+#mySlides{
+    padding-bottom: 90px;
 }
 
-section.portfolio>nav> .bar.state-1 .barinner{
-    margin-left: 0;
-    width: 35px;
+section.message>ol{
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 1px solid rgb(100, 98, 98);
 }
-
-section.portfolio>nav> .bar.state-2 .barinner{
-    margin-left: 65px;
-    width: 50px;
+section.message>ol>li{
+    text-align:left;
+    padding: 16px;
+    border-bottom: 1px solid rgb(100, 98, 98);
 }
-
-section.portfolio>nav> .bar.state-3 .barinner{
-    margin-left: 140px;
-    width: 96px;
-}
-
-section.portfolio .works{
-    position: relative;
-}
-
-section.portfolio .works > .big,
-section.portfolio .works > .small{
-    position: absolute;
-}
-
